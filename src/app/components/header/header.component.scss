@@ -1,0 +1,29 @@
+.header {
+    background-color: rgb(56, 59, 59);
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.sb-item {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+  .sb-item div form input {
+    width: 600px;
+    height: 30px
+  }
+
+.btn-cus {
+  max-width: 65px;
+  font-weight: bold;
+  align-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: small;
+  align-items: center;
+  display: flex;
+}
+
+
+
