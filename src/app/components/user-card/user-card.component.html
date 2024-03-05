@@ -1,18 +1,19 @@
 <div class="col">
-    <div class="card m-3 boarder-primary bg-light card-config" (click)="openModal()">
+    <div class="card m-3 boarder-primary bg-light card-config">
         <img class="card-img-top" [src]="imagePath" alt="example">
         <div class="card-body">
             <div><span>User ID:</span> {{user.id}}</div>                
-            <div><span>Name:</span> {{user.name}}</div>
+            <div data-cy="name-value"><span>Name:</span> {{user.name}}</div>
             <div><span>Surname:</span> {{user.surname}}</div>
             <div><span>Department:</span> {{user.department}}</div>
-            <div><span>Email:</span> {{user.email}}</div>
+            <div data-cy="email-value"><span>Email:</span> {{user.email}}</div>
             <div><span>Still Employed:</span>
                 <span *ngIf="user.liveUser"> Yes</span>
                 <span *ngIf="!user.liveUser"> No</span>
             </div>
         </div>
-        <div class="footer list-group-item">fewfefew</div>
+        <div class="footer list-group-item">
+            <button class="btn btn-primary" (click)="openModal()">Edit</button>
+        </div>
     </div>
 </div>
-<app-use-modal></app-use-modal>

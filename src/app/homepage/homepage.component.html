@@ -1,7 +1,7 @@
-    <app-use-modal></app-use-modal>
     <app-header (searchTermEmitter)="aplySearch($event)"></app-header>
     <div class="container"> 
         <div class="row">
-            <app-user-card *ngFor="let user of users | customFilter: searchText" [user]="user"></app-user-card>
+            <app-user-card *ngFor="let user of users | customFilter: searchText" [user]="user" (dataEmiter)="userDataModal = $event"></app-user-card>
         </div>
     </div>
+    <app-use-modal [userData]="userDataModal"></app-use-modal>

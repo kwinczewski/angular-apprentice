@@ -6,7 +6,7 @@ import { HeaderComponent } from '../components/header/header.component';
 import { User } from '../user-int';
 import { Users } from '../mock-user-data';
 import { FilterPipe } from '../filter.pipe';
-import { UseModalComponent } from '../components/use-modal/use-modal.component';
+import { UserModalComponent } from '../components/use-modal/user-modal.component';
 
 @Component({
   selector: 'app-homepage',
@@ -17,7 +17,7 @@ import { UseModalComponent } from '../components/use-modal/use-modal.component';
     CommonModule,
     UserCardComponent,
     FilterPipe,
-    UseModalComponent
+    UserModalComponent
   ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
@@ -25,6 +25,7 @@ import { UseModalComponent } from '../components/use-modal/use-modal.component';
 export class HomepageComponent {
   public users: User[] = []
   searchText: string = ""
+  userDataModal: User | undefined;
 
   public constructor() {
     this.users = Users;
@@ -32,5 +33,9 @@ export class HomepageComponent {
 
   aplySearch(term: string) {
     this.searchText = term;
+  }
+
+  transmitUserData(user: User): void {
+    this.userDataModal = user;
   }
 }
