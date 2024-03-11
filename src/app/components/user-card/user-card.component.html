@@ -1,8 +1,8 @@
-<div class="card m-3 border-black bg-light card-config">
+<div class="shadow card m-3 bg-light card-config">
     <div class="card-body">
         <div class="row">
             <div class="col-md-4">
-                <img class="rounded float-start img-thumbnail" [src]="imagePath" alt="example" style="width: 100%;">
+                <img class="rounded float-start img-thumbnail shadow-sm" [src]="imagePath" alt="example" style="width: 100%;">
             </div>
             <div class="col-md-8">
                 <div><span>User ID:</span> {{user.id}}</div>                
@@ -10,14 +10,10 @@
                 <div><span>Surname:</span> {{user.surname}}</div>
                 <div><span>Department:</span> {{user.department}}</div>
                 <div data-cy="email-value"><span>Email:</span> {{user.email}}</div>
-                <div><span>Still Employed:</span>
-                    <span *ngIf="user.liveUser"> Yes</span>
-                    <span *ngIf="!user.liveUser"> No</span>
-                </div>
             </div>
         </div>
     </div>
     <div class="card-footer">
-        <button class="btn btn-cus" (click)="openModal()">View Details</button>
+        <button class="shadow btn btn-cus" (click)="openModal()">View Details</button>
     </div>
 </div>

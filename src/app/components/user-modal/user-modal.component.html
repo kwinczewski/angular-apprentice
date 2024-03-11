@@ -22,24 +22,24 @@
         </ng-container>
         <ng-template #editUserDetails>
           <div class="modal-body">
-            <p><b>Name - </b><input type="text" [(ngModel)]="userData.name" aria-label="text"></p>
-            <p><b>Surname - </b><input type="text" [(ngModel)]="userData.surname" aria-label="text"></p>
-            <p><b>Email - </b><input type="text" [(ngModel)]="userData.email" aria-label="text"></p>
-            <p><b>Department - </b><input type="text" [(ngModel)]="userData.department" aria-label="text"></p>
-            <p><b>Salary - </b><input type="text" [(ngModel)]="userData.salary" aria-label="text"></p>
-            <p><b>Live User - </b><input type="text" [(ngModel)]="userData.liveUser" aria-label="text"></p>
-            <p><b>Sart Date - </b><input type="text" [(ngModel)]="userData.startDate" aria-label="text"></p>              
-            <p><b>Finish Date - </b><input type="text" [(ngModel)]="userData.finishDate" aria-label="text"></p>
+            <p><b>Name - </b><input class="input-group-sm" type="text" [(ngModel)]="userData.name" aria-label="text"></p>
+            <p><b>Surname - </b><input class="input-group-sm" type="text" [(ngModel)]="userData.surname" aria-label="text"></p>
+            <p><b>Email - </b><input class="input-group-sm" type="text" [(ngModel)]="userData.email" aria-label="text"></p>
+            <p><b>Department - </b><input class="input-group-sm" type="text" [(ngModel)]="userData.department" aria-label="text"></p>
+            <p><b>Salary - </b><input class="input-group-sm" type="text" [(ngModel)]="userData.salary" aria-label="text"></p>
+            <p><b>Live User - </b><input class="input-group-sm" type="text" [(ngModel)]="userData.liveUser" aria-label="text"></p>
+            <p><b>Sart Date - </b><input class="input-group-sm" type="text" [(ngModel)]="userData.startDate" aria-label="text"></p>              
+            <p><b>Finish Date - </b><input class="input-group-sm" type="text" [(ngModel)]="userData.finishDate" aria-label="text"></p>
           </div>
         </ng-template>
         <div class="modal-footer">
           <ng-container *ngIf="!userData.editUser else saveUserDetails">
-            <button type="button" class="btn btn-cus" (click)="userData && editUser(userData)">Edit User Details</button>
+            <button type="button" class="btn btn-cus shadow" (click)="userData && editUser(userData)">Edit User Details</button>
           </ng-container>
           <ng-template #saveUserDetails>
-            <button type="button" class="btn btn-cus" (click)="saveChanges(userData)">Save Changes</button>
+            <button type="button" class="btn btn-cus shadow" (click)="saveChanges(userData)">Save Changes</button>
           </ng-template>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal()">Close</button>
+          <button type="button" class="btn btn-secondary shadow" data-dismiss="modal" (click)="closeModal()">Close</button>
         </div>
       </div>
     </div>

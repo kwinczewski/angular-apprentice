@@ -28,6 +28,7 @@ export class HomepageComponent implements OnInit {
   public users: User[] = []
   searchText: string = ""
   userDataModal: User = {} as User;
+  public imagePath: string = "assets/istockphoto-1130884625-612x612.jpg";
 
   public constructor(private userService: UsersService) {
   }
