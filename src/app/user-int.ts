@@ -8,4 +8,5 @@ export interface User{
     startDate: Date;
     finishDate?: Date;
     liveUser: boolean;
+    editUser: boolean;
 }

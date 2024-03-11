@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John",
+      "surname": "Kubik",
+      "department": "Sales",
+      "email": "fegwgew",
+      "salary": 60000,
+      "startDate": "2023, 1, 1",
+      "finishDate": "undefined",
+      "liveUser": true,
+      "editUser": false
+    },
+    {
+      "id": "2",
+      "name": "Jane",
+      "surname": "Smith",
+      "department": "Marketing",
+      "email": "jane.smith@example.com",
+      "salary": 55000,
+      "startDate": "2023-2-1",
+      "finishDate": "undefined",
+      "liveUser": true,
+      "editUser": false
+    },
+    {
+      "id": "3",
+      "name": "Mike",
+      "surname": "Kubik",
+      "department": "HR",
+      "email": "mike.johnson@example.com",
+      "salary": 70000,
+      "startDate": "2023, 3, 1",
+      "finishDate": "undefined",
+      "liveUser": true,
+      "editUser": false
+    },
+    {
+      "id": "4",
+      "name": "Nicki",
+      "surname": "Brown",
+      "department": "Finance",
+      "email": "sarah.brown@example.com",
+      "salary": 60000,
+      "startDate": "2023, 4, 1",
+      "finishDate": "undefined",
+      "liveUser": true,
+      "editUser": false
+    },
+    {
+      "id": "5",
+      "name": "Alice",
+      "surname": "Williams",
+      "department": "Operations",
+      "email": "alice.williams@example.com",
+      "salary": 65000,
+      "startDate": "2023, 5, 1",
+      "finishDate": "undefined",
+      "liveUser": false,
+      "editUser": false
+    },
+    {
+      "id": "6",
+      "name": "Peter",
+      "surname": "Jones",
+      "department": "IT",
+      "email": "peter.jones@example.com",
+      "salary": 75000,
+      "startDate": "2023, 6, 1",
+      "finishDate": "undefined",
+      "liveUser": false,
+      "editUser": false
+    }
+  ]
+}

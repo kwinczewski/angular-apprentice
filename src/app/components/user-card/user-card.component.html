@@ -1,19 +1,23 @@
-<div class="col">
-    <div class="card m-3 boarder-primary bg-light card-config">
-        <img class="card-img-top" [src]="imagePath" alt="example">
-        <div class="card-body">
-            <div><span>User ID:</span> {{user.id}}</div>                
-            <div data-cy="name-value"><span>Name:</span> {{user.name}}</div>
-            <div><span>Surname:</span> {{user.surname}}</div>
-            <div><span>Department:</span> {{user.department}}</div>
-            <div data-cy="email-value"><span>Email:</span> {{user.email}}</div>
-            <div><span>Still Employed:</span>
-                <span *ngIf="user.liveUser"> Yes</span>
-                <span *ngIf="!user.liveUser"> No</span>
+<div class="card m-3 border-black bg-light card-config">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="rounded float-start img-thumbnail" [src]="imagePath" alt="example" style="width: 100%;">
+            </div>
+            <div class="col-md-8">
+                <div><span>User ID:</span> {{user.id}}</div>                
+                <div data-cy="name-value"><span>Name:</span> {{user.name}}</div>
+                <div><span>Surname:</span> {{user.surname}}</div>
+                <div><span>Department:</span> {{user.department}}</div>
+                <div data-cy="email-value"><span>Email:</span> {{user.email}}</div>
+                <div><span>Still Employed:</span>
+                    <span *ngIf="user.liveUser"> Yes</span>
+                    <span *ngIf="!user.liveUser"> No</span>
+                </div>
             </div>
         </div>
-        <div class="footer list-group-item">
-            <button class="btn btn-primary" (click)="openModal()">Edit</button>
-        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-cus" (click)="openModal()">View Details</button>
     </div>
 </div>

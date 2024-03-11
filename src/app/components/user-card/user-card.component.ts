@@ -1,7 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { User } from '../../user-int';
 import { DatePipe, CommonModule } from '@angular/common';
-import { UserModalComponent } from '../use-modal/user-modal.component';
 import { DisplayModalService } from '../../services/display-modal.service';
 import { ButtonComponent } from '../button/button.component';
 
@@ -11,7 +10,6 @@ import { ButtonComponent } from '../button/button.component';
   imports: [
     DatePipe,
     CommonModule,
-    UserModalComponent,
     ButtonComponent
   ],
   templateUrl: './user-card.component.html',
@@ -20,7 +18,7 @@ import { ButtonComponent } from '../button/button.component';
 export class UserCardComponent {
   @Input() user: User = {} as User;
   @Output() dataEmiter: EventEmitter<User> = new EventEmitter<User>();
-  public imagePath: string = "assets/placeHolder.jpg";
+  public imagePath: string = "assets/istockphoto-1130884625-612x612.jpg";
 
   constructor(private modalService: DisplayModalService) {}
     

@@ -1,10 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark sb-item">  
-  <div>
-    <form class="form-inline my-2 my-lg-0" (ngSubmit)="onSubmitSearch()">
-      <div>
-        <input class="form-control" type="search" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText">
-      </div>
-      <input type="submit" value="Search" aria-label="submit" class="btn btn-primary btn-cus">
-    </form>
+<nav class="navbar navbar-expand-lg navbar-light sb-item">  
+  <div class="container">
+    <div class="row">
+      <button class="btn col btn-cus">Add User</button>
+      <form class="form-inline my-2 my-lg-0 col" (ngSubmit)="onSubmitSearch()">
+        <div class="container">
+          <div class="row">
+            <input class="form-control col" type="search" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText">
+            <button type="submit" aria-label="submit" class="col btn btn-cus">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
-</nav>
+</nav>  

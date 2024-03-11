@@ -1,5 +1,5 @@
 .header {
-    background-color: rgb(56, 59, 59);
+    color: rgb(235, 5, 204);
     padding: 12px;
     border-radius: 5px;
 }
@@ -8,21 +8,24 @@
   align-items: center;
   justify-content: center;
   display: grid;
+  background-color: rgb(235, 14, 139);
 }
   .sb-item div form input {
     width: 600px;
-    height: 30px
+    height: 35px;
+    border-color: black;
+
   }
 
 .btn-cus {
-  max-width: 65px;
-  font-weight: bold;
-  align-content: center;
+  max-width: fit-content;
   text-align: center;
-  padding: 10px;
   font-size: small;
   align-items: center;
   display: flex;
+  background-color: rgb(255, 255, 255);
+  border-color: black;
+  font-weight: bold;
 }
 
 

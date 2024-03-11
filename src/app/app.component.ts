@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -9,7 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     RouterOutlet, 
     HomepageComponent,
-    HeaderComponent
+    HeaderComponent,
+    HttpClientModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -1,12 +1,13 @@
 import { UserCardComponent } from './../components/user-card/user-card.component';
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { HeaderComponent } from '../components/header/header.component';
 import { User } from '../user-int';
-import { Users } from '../mock-user-data';
 import { FilterPipe } from '../filter.pipe';
-import { UserModalComponent } from '../components/use-modal/user-modal.component';
+import { UserModalComponent } from '../components/user-modal/user-modal.component';
+import { UsersService } from '../services/users.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-homepage',
@@ -17,18 +18,28 @@ import { UserModalComponent } from '../components/use-modal/user-modal.component
     CommonModule,
     UserCardComponent,
     FilterPipe,
-    UserModalComponent
+    UserModalComponent,
+    HttpClientModule
   ],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
   public users: User[] = []
   searchText: string = ""
-  userDataModal: User | undefined;
+  userDataModal: User = {} as User;
 
-  public constructor() {
-    this.users = Users;
+  public constructor(private userService: UsersService) {
+  }
+
+  ngOnInit(): void {
+    this.getUsers()
+  }
+
+  getUsers(): void {
+    this.userService.getUsers().subscribe(users => {
+      this.users = users;
+    });
   }
 
   aplySearch(term: string) {
@@ -38,4 +49,6 @@ export class HomepageComponent {
   transmitUserData(user: User): void {
     this.userDataModal = user;
   }
+
+    
 }
