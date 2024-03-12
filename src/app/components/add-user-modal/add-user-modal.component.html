@@ -1,0 +1,28 @@
+<div *ngIf="modalVisible" class="modal-overlay">
+    <div class="modal" tabindex="-1" role="dialog" style="display: block">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <ng-container>
+            <div class="modal-body"> 
+                <p><b>Name - </b><input class="input-group-sm" type="text" aria-label="text"></p>
+                <p><b>Surname - </b><input class="input-group-sm" type="text" aria-label="text"></p>
+                <p><b>Email - </b><input class="input-group-sm" type="text"  aria-label="text"></p>
+                <p><b>Department - </b><input class="input-group-sm" type="text" aria-label="text"></p>
+                <p><b>Salary - </b><input class="input-group-sm" type="text" aria-label="text"></p>
+                <p><b>Live User - </b><input class="input-group-sm" type="text" aria-label="text"></p>
+                <p><b>Sart Date - </b><input class="input-group-sm" type="text" aria-label="text"></p>              
+                <p><b>Finish Date - </b><input class="input-group-sm" type="text" aria-label="text"></p>
+            </div>
+          </ng-container>
+            <button type="button" class="btn btn-secondary shadow" data-dismiss="modal" (click)="closeModal()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
