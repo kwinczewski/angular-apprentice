@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule }  from '@angular/material/toolbar'
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { DisplayModalService } from '../../services/display-modal.service';
+import { AddUsersService } from '../../services/add-users.service';
+import { AddUserModalComponent } from '../add-user-modal/add-user-modal.component';
 
 @Component({
   selector: 'app-header',
@@ -12,22 +13,21 @@ import { DisplayModalService } from '../../services/display-modal.service';
     CommonModule,
     MatToolbarModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    AddUserModalComponent,
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  searchText: string = "";
-  @Output() searchTermEmitter: EventEmitter<string> = new EventEmitter<string>();
+  searchText: string = '';
+  @Output() searchTermEmitter: EventEmitter<string> =
+    new EventEmitter<string>();
 
-  constructor(private modalService: DisplayModalService) {
-    
-  }
-  
+  constructor(private modalService: AddUsersService) {}
+
   onSubmitSearch() {
     this.searchTermEmitter.emit(this.searchText);
-    // console.log(this.searchText);
     this.searchText = this.searchText;
   }
 

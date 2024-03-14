@@ -1,26 +1,26 @@
 .card-config {
-    min-width: 330px;
-    max-width: 450px;
-    color: rgb(86, 85, 85);
+  min-width: 330px;
+  max-width: 450px;
+  color: rgb(86, 85, 85);
 }
 
 .card-config span {
-    font-weight: 600;
-    color: black
+  font-weight: 600;
+  color: black;
 }
 
 .card-config p {
-    font-size: small;
-    margin-bottom: 8px;
+  font-size: small;
+  margin-bottom: 8px;
 }
 
 .btn-cus {
-    max-width: fit-content;
-    text-align: center;
-    font-size: small;
-    color: white;
-    align-items: center;
-    display: flex;
-    background-color: rgb(235, 14, 139);
-    font-weight: bold;
-  }
+  max-width: fit-content;
+  text-align: center;
+  font-size: small;
+  color: white;
+  align-items: center;
+  display: flex;
+  background-color: rgb(235, 14, 139);
+  font-weight: bold;
+}

@@ -1,15 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light sb-item shadow">  
+<nav class="navbar navbar-expand-lg navbar-light sb-item shadow">
   <div class="container">
     <div class="row">
-      <button class="btn col btn-cus shadow" (click)="openModal()">Add User</button>
+      <button class="btn col btn-cus shadow" (click)="openModal()">
+        Add User
+      </button>
       <form class="form-inline my-2 my-lg-0 col" (ngSubmit)="onSubmitSearch()">
         <div class="container">
           <div class="input-group shadow">
-            <input class="form-control" type="search" name="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText">
-            <button type="submit" aria-label="submit" class="btn btn-cus">Search</button>
+            <input
+              class="form-control"
+              type="search"
+              name="search"
+              placeholder="Search"
+              aria-label="Search"
+              [(ngModel)]="searchText"
+            />
+            <button type="submit" aria-label="submit" class="btn btn-cus">
+              Search
+            </button>
           </div>
         </div>
       </form>
     </div>
   </div>
-</nav>  
+</nav>

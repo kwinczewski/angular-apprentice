@@ -1,28 +1,136 @@
 <div *ngIf="modalVisible" class="modal-overlay">
-    <div class="modal" tabindex="-1" role="dialog" style="display: block">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+  <div class="modal" tabindex="-1" role="dialog" style="display: block">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create New User</h5>
+        </div>
+        <ng-container>
+          <div class="modal-body">
+            <form (ngSubmit)="submitNewUser()" class="pe-5">
+              <div class="mb-3 row">
+                <label
+                  class="col-sm-2 col-form-label col-form-label-sm"
+                  for="name"
+                  >Name</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    [(ngModel)]="newUser.name"
+                    class="form-control form-control-sm"
+                    type="text"
+                    name="name"
+                    aria-label="Name"
+                    title="Name"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label
+                  class="col-sm-2 col-form-label col-form-label-sm"
+                  for="surname"
+                  >Surname</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    [(ngModel)]="newUser.surname"
+                    class="form-control form-control-sm"
+                    type="text"
+                    name="surname"
+                    aria-label="Surname"
+                    title="Surname"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label
+                  class="col-sm-2 col-form-label col-form-label-sm"
+                  for="department"
+                  >Department</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    [(ngModel)]="newUser.department"
+                    class="form-control form-control-sm"
+                    type="text"
+                    name="department"
+                    aria-label="Department"
+                    title="Department"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label
+                  class="col-sm-2 col-form-label col-form-label-sm"
+                  for="email"
+                  >Email</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    [(ngModel)]="newUser.email"
+                    class="form-control form-control-sm"
+                    type="text"
+                    name="email"
+                    aria-label="Email"
+                    title="Email"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label
+                  class="col-sm-2 col-form-label col-form-label-sm"
+                  for="salary"
+                  >Salary</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    [(ngModel)]="newUser.salary"
+                    class="form-control form-control-sm"
+                    type="text"
+                    name="salary"
+                    aria-label="Salary"
+                    title="Salary"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label
+                  class="col-sm-2 col-form-label col-form-label-sm"
+                  for="startdate"
+                  >Start Date</label
+                >
+                <div class="col-sm-10">
+                  <input
+                    [(ngModel)]="newUser.startDate"
+                    class="form-control form-control-sm"
+                    type="text"
+                    name="startdate"
+                    aria-label="Start Date"
+                    title="Start Date"
+                  />
+                </div>
+              </div>
+            </form>
           </div>
-          <ng-container>
-            <div class="modal-body"> 
-                <p><b>Name - </b><input class="input-group-sm" type="text" aria-label="text"></p>
-                <p><b>Surname - </b><input class="input-group-sm" type="text" aria-label="text"></p>
-                <p><b>Email - </b><input class="input-group-sm" type="text"  aria-label="text"></p>
-                <p><b>Department - </b><input class="input-group-sm" type="text" aria-label="text"></p>
-                <p><b>Salary - </b><input class="input-group-sm" type="text" aria-label="text"></p>
-                <p><b>Live User - </b><input class="input-group-sm" type="text" aria-label="text"></p>
-                <p><b>Sart Date - </b><input class="input-group-sm" type="text" aria-label="text"></p>              
-                <p><b>Finish Date - </b><input class="input-group-sm" type="text" aria-label="text"></p>
-            </div>
-          </ng-container>
-            <button type="button" class="btn btn-secondary shadow" data-dismiss="modal" (click)="closeModal()">Close</button>
-          </div>
+        </ng-container>
+        <div class="modal-footer">
+          <button
+            type="submit"
+            class="btn btn-cus shadow"
+            (click)="submitNewUser(); closeModal()"
+          >
+            Save Changes
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary shadow"
+            data-dismiss="modal"
+            (click)="closeModal()"
+          >
+            Close
+          </button>
         </div>
       </div>
     </div>
-  
+  </div>
+</div>

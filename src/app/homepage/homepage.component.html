@@ -1,8 +1,13 @@
-    <app-header (searchTermEmitter)="aplySearch($event)"></app-header>
-    <div class="container"> 
-        <div class="row">
-            <app-user-card class="col" *ngFor="let user of users | customFilter: searchText" [user]="user" (dataEmiter)="userDataModal = $event"></app-user-card>
-        </div>
-    </div>
-    <app-use-modal [userData]="userDataModal"></app-use-modal>
-    
+<app-header (searchTermEmitter)="aplySearch($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <app-user-card
+      class="col"
+      *ngFor="let user of users | customFilter: searchText"
+      [user]="user"
+      (dataEmiter)="userDataModal = $event"
+    ></app-user-card>
+  </div>
+</div>
+<app-use-modal [userData]="userDataModal"></app-use-modal>
+<app-add-user-modal></app-add-user-modal>

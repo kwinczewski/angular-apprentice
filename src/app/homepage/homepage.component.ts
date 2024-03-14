@@ -8,37 +8,38 @@ import { FilterPipe } from '../filter.pipe';
 import { UserModalComponent } from '../components/user-modal/user-modal.component';
 import { UsersService } from '../services/users.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AddUserModalComponent } from '../components/add-user-modal/add-user-modal.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
   imports: [
-    MatSlideToggle, 
+    MatSlideToggle,
     HeaderComponent,
     CommonModule,
     UserCardComponent,
     FilterPipe,
     UserModalComponent,
-    HttpClientModule
+    HttpClientModule,
+    AddUserModalComponent,
   ],
   templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+  styleUrl: './homepage.component.scss',
 })
 export class HomepageComponent implements OnInit {
-  public users: User[] = []
-  searchText: string = ""
+  public users: User[] = [];
+  searchText: string = '';
   userDataModal: User = {} as User;
-  public imagePath: string = "assets/istockphoto-1130884625-612x612.jpg";
+  public imagePath: string = 'assets/istockphoto-1130884625-612x612.jpg';
 
-  public constructor(private userService: UsersService) {
-  }
+  public constructor(private userService: UsersService) {}
 
   ngOnInit(): void {
-    this.getUsers()
+    this.getUsers();
   }
 
   getUsers(): void {
-    this.userService.getUsers().subscribe(users => {
+    this.userService.getUsers().subscribe((users) => {
       this.users = users;
     });
   }
@@ -50,6 +51,4 @@ export class HomepageComponent implements OnInit {
   transmitUserData(user: User): void {
     this.userDataModal = user;
   }
-
-    
 }
