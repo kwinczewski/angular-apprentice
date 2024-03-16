@@ -9,6 +9,7 @@ import { UserModalComponent } from '../components/user-modal/user-modal.componen
 import { UsersService } from '../services/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AddUserModalComponent } from '../components/add-user-modal/add-user-modal.component';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-homepage',
@@ -50,5 +51,13 @@ export class HomepageComponent implements OnInit {
 
   transmitUserData(user: User): void {
     this.userDataModal = user;
+  }
+
+  public onNewUserAdded(): void {
+    this.getUsers();
+  }
+
+  public onDeletedUser(deletedUser: User): void {
+    this.users = this.users.filter((u) => u.id !== deletedUser.id);
   }
 }

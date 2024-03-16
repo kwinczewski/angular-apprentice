@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { AddUsersService } from '../../services/add-users.service';
+import {
+  ModalLaunchService,
+  ModalType,
+} from '../../services/add-users.service';
 import { AddUserModalComponent } from '../add-user-modal/add-user-modal.component';
 
 @Component({
@@ -24,7 +27,7 @@ export class HeaderComponent {
   @Output() searchTermEmitter: EventEmitter<string> =
     new EventEmitter<string>();
 
-  constructor(private modalService: AddUsersService) {}
+  constructor(private modalService: ModalLaunchService) {}
 
   onSubmitSearch() {
     this.searchTermEmitter.emit(this.searchText);
@@ -32,6 +35,6 @@ export class HeaderComponent {
   }
 
   public openModal(): void {
-    this.modalService.openModal();
+    this.modalService.openModal(ModalType.AddUser);
   }
 }

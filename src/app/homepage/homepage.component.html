@@ -9,5 +9,8 @@
     ></app-user-card>
   </div>
 </div>
-<app-use-modal [userData]="userDataModal"></app-use-modal>
-<app-add-user-modal></app-add-user-modal>
+<app-use-modal
+  [userData]="userDataModal"
+  (deletedUser)="onDeletedUser($event)"
+></app-use-modal>
+<app-add-user-modal (newUserAdded)="onNewUserAdded()"></app-add-user-modal>

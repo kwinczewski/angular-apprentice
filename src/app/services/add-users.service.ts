@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-
+import { Subject } from 'rxjs';
+export enum ModalType {
+  AddUser,
+  ViewUserDetails,
+}
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class AddUsersService {
-  private modalOpenSubject = new BehaviorSubject<boolean>(false);
+export class ModalLaunchService {
+  private modalOpenSubject = new Subject<ModalType>();
   modalOpen$ = this.modalOpenSubject.asObservable();
-  
-  constructor() { }
 
-  openModal():void {
-    this.modalOpenSubject.next(true);
+  constructor() {}
+
+  openModal(modalType: ModalType): void {
+    this.modalOpenSubject.next(modalType);
   }
 }
+// modal type enum

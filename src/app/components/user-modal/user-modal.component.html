@@ -105,6 +105,12 @@
           </div>
         </ng-template>
         <div class="modal-footer">
+          <button
+            class="btn btn-cus delete shadow"
+            (click)="deleteCurrentUser(userData)"
+          >
+            Delete User
+          </button>
           <ng-container *ngIf="!userData.editUser; else saveUserDetails">
             <button
               type="button"
@@ -125,7 +131,7 @@
           </ng-template>
           <button
             type="button"
-            class="btn btn-secondary shadow"
+            class="btn btn-cus close shadow"
             data-dismiss="modal"
             (click)="closeModal()"
           >

@@ -1,8 +1,11 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { User } from '../../user-int';
 import { DatePipe, CommonModule } from '@angular/common';
-import { DisplayModalService } from '../../services/display-modal.service';
 import { ButtonComponent } from '../button/button.component';
+import {
+  ModalLaunchService,
+  ModalType,
+} from '../../services/add-users.service';
 
 @Component({
   selector: 'app-user-card',
@@ -16,10 +19,10 @@ export class UserCardComponent {
   @Output() dataEmiter: EventEmitter<User> = new EventEmitter<User>();
   public imagePath: string = 'assets/istockphoto-1130884625-612x612.jpg';
 
-  constructor(private modalService: DisplayModalService) {}
+  constructor(private modalService: ModalLaunchService) {}
 
   public openModal(): void {
-    this.modalService.openModal();
+    this.modalService.openModal(ModalType.ViewUserDetails);
     this.dataEmiter.emit(this.user);
   }
 }
