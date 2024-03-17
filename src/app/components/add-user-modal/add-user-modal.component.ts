@@ -11,8 +11,10 @@ import {
   FormGroup,
   FormsModule,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 import { filter } from 'rxjs/operators';
+
 @Component({
   selector: 'app-add-user-modal',
   templateUrl: './add-user-modal.component.html',
@@ -22,10 +24,11 @@ import { filter } from 'rxjs/operators';
 })
 export class AddUserModalComponent {
   public modalVisible: boolean = false;
-  public newUser: User = {} as User;
+  public newUser: User = new User();
   private users: User[] = [];
   @Output() newUserAdded: EventEmitter<User> = new EventEmitter();
-  public addUserForm: FormGroup = new FormGroup({});
+  public addUserForm: FormGroup;
+  // private newUserDataKeys: (keyof User)[] = [];
 
   constructor(
     private modalService: ModalLaunchService,
@@ -35,6 +38,8 @@ export class AddUserModalComponent {
     this.userService.getUsers().subscribe((users) => {
       this.users = users;
     });
+
+    this.addUserForm = this.fb.group({});
   }
 
   ngOnInit(): void {
@@ -43,8 +48,20 @@ export class AddUserModalComponent {
       .subscribe(() => {
         this.modalVisible = true;
       });
-    this.addUserForm = this.createFormGroup(this.newUser);
-    console.log();
+
+    this.addUserForm = this.fb.group(
+      Object.keys(this.newUser).reduce(
+        (acc, key) => {
+          if (key === 'email') {
+            acc[key as keyof User] = ['', Validators.required];
+          } else {
+            acc[key as keyof User] = ['', Validators.required];
+          }
+          return acc;
+        },
+        {} as Record<keyof User, any>,
+      ),
+    );
   }
 
   public closeModal(): void {
@@ -53,29 +70,16 @@ export class AddUserModalComponent {
 
   public submitNewUser(): void {
     console.log(this.addUserForm.value);
-    // this.closeModal();
-    // this.newUser = {
-    //   ...this.newUser,
-    //   finishDate: undefined,
-    //   liveUser: true,
-    //   editUser: false,
-    // };
-    // this.userService.addNewUser(this.newUser).subscribe((newUser) => {
-    //   this.newUserAdded.emit();
-    //   this.newUser = {} as User;
-    // });
-  }
-
-  private createFormGroup(userModel: User): FormGroup {
-    const newUserGroup: any = {};
-    Object.keys(userModel).forEach((key) => {
-      const userKey = key as keyof User;
-      if (userKey === 'id' || userKey === 'finishDate') {
-        newUserGroup[userKey] = userModel[userKey] || null;
-      } else {
-        newUserGroup[userKey] = userModel[userKey];
-      }
+    this.closeModal();
+    this.newUser = {
+      ...this.newUser,
+      finishDate: undefined,
+      liveUser: true,
+      editUser: false,
+    };
+    this.userService.addNewUser(this.newUser).subscribe((newUser) => {
+      this.newUserAdded.emit();
+      this.newUser = {} as User;
     });
-    return this.fb.group(newUserGroup);
   }
 }

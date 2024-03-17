@@ -1,12 +1,12 @@
-export interface User{
-    id?: number;
-    name: string;
-    surname: string;
-    department: string;
-    email: string;
-    salary: number;
-    startDate: Date;
-    finishDate?: Date;
-    liveUser: boolean;
-    editUser: boolean;
+export class User {
+  id?: number = 0;
+  name: string = '';
+  surname: string = '';
+  department: string = '';
+  email: string = '';
+  salary: number = 0;
+  startDate: Date = new Date();
+  finishDate?: Date = undefined;
+  liveUser: boolean = false;
+  editUser: boolean = false;
 }

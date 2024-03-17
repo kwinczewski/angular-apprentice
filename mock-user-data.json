@@ -105,17 +105,6 @@
       "editUser": false
     },
     {
-      "id": "10",
-      "name": "nknnk",
-      "surname": "nnnkn",
-      "department": "knklnkln",
-      "email": "knklnkln",
-      "salary": "nklnkln",
-      "startDate": "klnlkn",
-      "liveUser": true,
-      "editUser": false
-    },
-    {
       "id": "11",
       "name": "njn kk ",
       "surname": "jknjnjn",
@@ -186,6 +175,33 @@
       "email": "knnn",
       "salary": "knlkn",
       "startDate": "knknknlkn",
+      "liveUser": true,
+      "editUser": false
+    },
+    {
+      "id": 18,
+      "liveUser": true,
+      "editUser": false
+    },
+    {
+      "id": 18,
+      "name": "",
+      "surname": "",
+      "department": "",
+      "email": "",
+      "salary": 0,
+      "startDate": "2024-03-17T13:09:01.166Z",
+      "liveUser": true,
+      "editUser": false
+    },
+    {
+      "id": 19,
+      "name": "",
+      "surname": "",
+      "department": "",
+      "email": "",
+      "salary": 0,
+      "startDate": "2024-03-17T13:15:38.174Z",
       "liveUser": true,
       "editUser": false
     }
